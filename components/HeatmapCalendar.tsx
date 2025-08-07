@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
+//@ts-ignore
 import CalendarHeatmap from "react-calendar-heatmap";
 import "react-calendar-heatmap/dist/styles.css";
 

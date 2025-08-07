@@ -71,6 +71,7 @@ export default function DashboardPage() {
 
   useEffect(() => {
     if (activities.length > 0) {
+      //@ts-ignore
       const data = getHeatmapData(activities, selectedYear, selectedCategory === 'all' ? undefined : selectedCategory);
       setHeatmapData(data);
     }

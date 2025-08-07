@@ -30,7 +30,7 @@ export async function GET(request: NextRequest) {
     if (categoryId && categoryId !== 'all') {
       filteredActivities = activities.map(activity => ({
         ...activity.toObject(),
-        entries: activity.entries.filter(entry => 
+        entries: activity.entries.filter((entry: any) => 
           entry.categoryId.toString() === categoryId
         )
       })).filter(activity => activity.entries.length > 0);
