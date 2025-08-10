@@ -35,7 +35,8 @@ export function calculateStreaks(activities: IActivity[]): StreakData {
   // Calculate current streak (from today backwards)
   const today = new Date().toISOString().split("T")[0];
   let currentStreak = 0;
-  const currentDate = new Date(today.getDate() - 1);
+  const currentDate = new Date(today);
+  currentDate.setDate(currentDate.getDate() - 1);
 
   // Only start counting if today is active
   while (true) {
