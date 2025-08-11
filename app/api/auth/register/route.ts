@@ -43,15 +43,15 @@ export async function POST(request: NextRequest) {
     const hashedPassword = await hashPassword(password);
 
     // Remove these comments to start registration ------------------------------------------------------------
-    const user = new User({
-      email: email.toLowerCase(),
-      password: hashedPassword,
-      otp: hashedOTP,
-      otpExpires,
-      isVerified: false
-    });
+    // const user = new User({
+    //   email: email.toLowerCase(),
+    //   password: hashedPassword,
+    //   otp: hashedOTP,
+    //   otpExpires,
+    //   isVerified: false
+    // });
 
-    await user.save();
+    // await user.save();
 
     // Send OTP email
     await sendOTPEmail(email, otp);
@@ -60,7 +60,7 @@ export async function POST(request: NextRequest) {
       {
         message:
           "User registered successfully. Please check your email for verification code.",
-        userId: user._id
+        // userId: user._id
       },
       { status: 201 }
     );
